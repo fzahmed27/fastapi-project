@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Valve Diagram</title>
+  <style>
+    .diagram {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: no-wrap;
+      align-items: center;
+    }
+
+    .pipe {
+      background-color: grey;
+    }
+
+    .horizontal-pipe {
+      height: 10px;
+      width: 50px;
+    }
+
+    .vertical-pipe {
+      height: 50px;
+      width: 10px;
+    }
+
+    .valve {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: lightgrey;
+      border-radius: 50%;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="diagram">
+    <div class="pipe horizontal-pipe"></div>
+    <div class="valve" id="valve1"  onclick="toggleValve(this)">V1</div>
+    <div class="pipe horizontal-pipe"></div>
+    <div class="valve" id="valve2"  onclick="toggleValve(this)">V2</div>
+    <div class="pipe horizontal-pipe"></div>
+    <div class="valve" id="valve3" onclick="toggleValve(this)">V3</div>
+    <div class="pipe horizontal-pipe"></div>
+    <div class="valve" id="valve4", onclick="toggleValve(this)">V4</div>
+    <div class="pipe horizontal-pipe"></div>
+    <div class="valve" id="valve5" onclick="toggleValve(this)">V5</div>
+    <div class="pipe horizontal-pipe"></div>
+    <div class="valve" id="valve6" onclick="toggleValve(this)">V6</div>
+    <div class="pipe horizontal-pipe"></div>
+    <div class="valve" id="valve7" onclick="toggleValve(this)">V7</div>
+    <div class="pipe horizontal-pipe"></div>
+  </div>
+
+  <script>
+    function toggleValve(valveElement) {
+      if (valveElement.style.backgroundColor === 'green') {
+        valveElement.style.backgroundColor = 'red';
+        valveElement.innerHTML = 'Closed';
+      } else {
+        valveElement.style.backgroundColor = 'green';
+        valveElement.innerHTML = 'Open';
+      }
+    }
+  </script>
+
+
+
+
+</body>
+</html>
