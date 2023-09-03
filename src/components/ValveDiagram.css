@@ -21,12 +21,67 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
     font-weight: bold;
     cursor: pointer;
-  }
   
+  }
   .valve img {
     max-width: 80%;
   }
+
+  .valve-number {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .inlet-pipe {
+    height: 10px;
+    width: 50px;
+    background-color: grey;
+    margin-right: 5px;
+  }
+  
+
+  .horizontal-pipe {
+    height: 10px;
+    width: 50px;
+    background-color: grey;
+    margin-right: 5px;
+    align-items: center;
+  }
+  
+  .inlet-section {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    transform: rotate(180
+    px);  /* Rotate 90 degrees */
+  }
+  .inlet-valve img {
+    width: 50px;  /* Width of the image */
+    height: 50px;  /* Height of the image */
+  }
+  .horizontal-center-pipe {
+    position: absolute;
+    top: 50%;  /* Center vertically */
+    left: 50%;  /* Center horizontally */
+    transform: translate(-50%, -50%);  /* Adjust for its own dimensions */
+    width: 50px;
+    height: 10px;
+    background-color: grey;
+  }
+  .vertical-pipe {
+    position: relative;  /* Added this line */
+    height: 50px;
+    width: 10px;
+    background-color: grey;
+    margin-right: 5px;
+  }
+  
+  
+
+  
+ 
+  
   

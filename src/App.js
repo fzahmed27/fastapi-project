@@ -1,8 +1,8 @@
 import React from 'react';
-import './App.css';
 import ValveDiagram from './components/Valve';
 import ATCommands from './components/ATCommands';
 import DataUpload from './components/DataUpload';
+import './App.css';
 
 function App() {
   return (
@@ -15,7 +15,10 @@ function App() {
             <DataUpload />
           </div>
           <div className="right-panel">
-            <ValveDiagram />
+            <div className="valve-control-dashboard">
+              <h2>Valve Control</h2>
+              <ValveDiagram />
+            </div>
           </div>
         </div>
       </header>
