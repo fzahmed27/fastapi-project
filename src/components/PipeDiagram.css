@@ -1,0 +1,80 @@
+.horizontal-pipe {
+    width: 400px;
+    height: 20px;
+    background-color: grey;
+    position: absolute;
+    top:400px;
+  }
+  
+  .vertical-pipe {
+    width: 20px;
+    height: 100px;
+    background-color: grey;
+    position: absolute;
+    bottom: 0;
+  }
+  
+  .valve-icon {
+    position: absolute;
+    bottom: 100%;  /* Positioned at the top of the vertical pipe */
+    left: 50%;  /* Centered horizontally */
+    transform: translate(-50%, 0);  /* Adjust for precise centering */
+    width: 40px;
+    height: 40px;
+  }
+  .valve-number {
+    position: absolute;
+    bottom: calc(100% + 20px);  /* Positioned above the image, adjust as needed */
+    left: 50%;  /* Centered horizontally */
+    transform: translate(-50%, -100%);  /* Adjust for precise centering */
+    font-size: 16px;  /* Adjust the font size as needed */
+    font-weight: bold;
+  }
+ 
+
+.inlet-valve {
+  width: 20px;
+  height: 100px;
+  background-color: grey;
+  position: absolute;
+  bottom: 0;
+}
+
+.t-junction {
+  position: center;
+  bottom: 0;
+  width: 20px;
+  height: 100px;
+  background-color: grey;
+  text-align: center;
+  line-height: 100px;
+  color: white;
+}
+
+.valve-icon {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 40px;
+  height: 40px;
+}
+
+.valve-number {
+  position: absolute;
+  bottom: calc(100% + 20px);
+  left: 50%;
+  transform: translate(-50%, -100%);
+  font-size: 16px;
+  font-weight: bold;
+}
+.valve-status {
+  position: absolute;
+  bottom: calc(100% + 100px);  /* Positioned above the valve number, adjust as needed */
+  left: 50%;  /* Centered horizontally */
+  transform: translate(-50%, -100%);  /* Adjust for precise centering */
+  font-size: 14px;  /* Adjust the font size as needed */
+}
+
+
+ 

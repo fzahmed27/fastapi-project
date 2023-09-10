@@ -1,22 +1,36 @@
 import React, { useState } from 'react';
-import './ValveDiagram.css';  // Import the CSS (create this file)
-
+import './ValveDiagram.css';
+import PipeDiagram from './Pipe'
 const ValveDiagram = () => {
   const initialValves = Array.from({ length: 7 }, (_, index) => ({
     id: `valve${index + 1}`,
     status: 'Closed',
   }));
 
-  const [valves, setValves] = useState(initialValves);
+const [valves, setValves] = useState(initialValves);
 
-  const toggleValve = (id) => {
+const [inletValves, setInletValves] = useState([
+    { id: 'inletValve1', status: 'Closed', color: 'red' },
+    { id: 'inletValve2', status: 'Closed', color: 'red' },
+  ]);
+
+const toggleValve = (id) => {
     setValves((prevValves) =>
       prevValves.map((valve) =>
         valve.id === id
+          ? { ...valve, status: valve.status === 'Closed' ? 'Open' : 'Closed' }
+          : valve
+      )
+    );
+  };
+
+  const toggleInletValve = (id) => {
+    setInletValves((prevInletValves) =>
+      prevInletValves.map((valve) =>
+        valve.id === id
           ? {
               ...valve,
-              status: valve.status === 'Closed' ? 'Open' : 'Closed',
-            }
+              status: valve.status === 'Closed' ? 'Open' : 'Closed' }
           : valve
       )
     );
@@ -24,29 +38,33 @@ const ValveDiagram = () => {
 
   return (
     <div className="diagram">
-    <div className="inlet-section">
-      <div className="inlet-valve">
-        <img src={`${process.env.PUBLIC_URL}/inlet-valve-1.png`} alt="Inlet Valve 1" />
-      </div>  {/* Inlet Valve 1 */}
-      <div className="inlet-pipe vertical-pipe"></div>
-
-      <div className="inlet-valve">
-        <img src={`${process.env.PUBLIC_URL}/inlet-valve-2.png`} alt="Inlet Valve 2" />
-      </div>  {/* Inlet Valve 2 */}
+      <div className="inlet-section">
+        <div className="inlet-container">
+          {/* Inlet Valve 1 */}
+          <div className="inlet-valve-label">IV1</div>
+          <div className="inlet-valve" id={inletValves[0].id}
+               onClick={() => toggleInletValve(inletValves[0].id)}>
+            {inletValves[0].status}
+            <img src={`${process.env.PUBLIC_URL}/inlet-valve-${inletValves[0].status.toLowerCase()}-1.png`} alt={inletValves[0].status} />
+          </div>
+          
+          {/* Inlet Valve 2 */}
+          <div className="inlet-valve" id={inletValves[1].id}
+               onClick={() => toggleInletValve(inletValves[1].id)}>
+            <img src={`${process.env.PUBLIC_URL}/inlet-valve-${inletValves[1].status.toLowerCase()}-2.png`} alt={inletValves[1].status} />
+            {inletValves[1].status}
+            <div className="inlet-valve-label">IV2</div>
+          </div>
+        </div>
       </div>
-      <div className="horizontal-pipe"></div>  {/* Horizontal pipe before Valve 1 */}
+
       {valves.map((valve, index) => (
         <React.Fragment key={valve.id}>
-          {index !== 0 && <div className="pipe horizontal-pipe"></div>}
-          <div className="valve" id={valve.id}>
-            <div className="valve-number">{`Valve ${index + 1}`}</div>
-            <img 
-              src={`${process.env.PUBLIC_URL}/valve-icon-${valve.status}.png`} 
-              alt={valve.status} 
-              onClick={() => toggleValve(valve.id)} 
-            />
-            {valve.status}
-          </div>
+          <PipeDiagram/>
+
+
+    
+  
         </React.Fragment>
       ))}
     </div>
@@ -54,4 +72,3 @@ const ValveDiagram = () => {
 };
 
 export default ValveDiagram;
-

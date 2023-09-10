@@ -1,87 +1,53 @@
-.diagram {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: no-wrap;
-    align-items: center;
-  }
-  
-  .pipe {
-    background-color: grey;
-  }
-  
-  .horizontal-pipe {
-    height: 10px;
-    width: 50px;
-  }
-  
-  .valve {
-    width: 50px;
-    height: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    cursor: pointer;
-  
-  }
-  .valve img {
-    max-width: 80%;
-  }
 
-  .valve-number {
-    font-size: 14px;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  .inlet-pipe {
-    height: 10px;
-    width: 50px;
-    background-color: grey;
-    margin-right: 5px;
-  }
-  
 
-  .horizontal-pipe {
-    height: 10px;
-    width: 50px;
-    background-color: grey;
-    margin-right: 5px;
-    align-items: center;
-  }
-  
-  .inlet-section {
-    display: flex;
-    flex-direction: column;
-    align-items:center;
-    transform: rotate(180
-    px);  /* Rotate 90 degrees */
-  }
-  .inlet-valve img {
-    width: 50px;  /* Width of the image */
-    height: 50px;  /* Height of the image */
-  }
-  .horizontal-center-pipe {
-    position: absolute;
-    top: 50%;  /* Center vertically */
-    left: 50%;  /* Center horizontally */
-    transform: translate(-50%, -50%);  /* Adjust for its own dimensions */
-    width: 50px;
-    height: 10px;
-    background-color: grey;
-  }
-  .vertical-pipe {
-    position: relative;  /* Added this line */
-    height: 50px;
-    width: 10px;
-    background-color: grey;
-    margin-right: 5px;
-  }
-  
-  
 
-  
- 
-  
-  
+/* Valve and pipe styling */
+.horizontal-pipe,
+.vertical-pipe {
+  background-color: rgb(191, 76, 76);
+  margin: 0;
+  padding: 0;
+}
+
+.horizontal-pipe {
+  width: 100px;
+  height: 10px;
+}
+
+.vertical-pipe {
+  width: 10px;
+  height: 100px;
+  justify-content: center;
+}
+
+
+
+/* Valve and inlet valve styling */
+.valve,
+.inlet-valve {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  margin: 0 10px;
+  font-weight: bold;
+  cursor: pointer;
+  color: black;
+}
+
+.valve img,
+.inlet-valve img {
+  max-width: 80%;
+  margin: 0;
+  padding: 0;
+  display: block;
+  justify-content: center;
+}
+
+.valve-number {
+  font-size: 16px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}

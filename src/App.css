@@ -1,49 +1,49 @@
-/* Import a custom Google font */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
-
-.App {
-  text-align: center;
-  font-family: 'Roboto', sans-serif;  /* Use the custom font */
-}
-
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
+  background-color: #ebedef;
 }
 
-.dashboard {
-  width: 100%;
+.dashboard-wrapper {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  padding: 20px;
+  margin-top: 20px;
 }
-
-.left-panel {
-  flex: 1;
-}
-
 .right-panel {
-  flex: 1;
+  flex: 0.7;
+  padding: 20px;
+  height: 800px;
+  justify-content: center;
+  border: 1px solid #e6e2e2;
+}
+.left-panel {
+  flex: .3;
+  padding: 10px;
+  display: flex;
+  height: 500px;
+  justify-content: left;
+  border: 1px solid #141313;
 }
 
-/* Style the headers */
-h1, h2 {
-  font-weight: 500; /* Semi-bold */
+.valve-control-dashboard {
+  border: 0.5px solid #f6f5f5;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  background-color: rgb(231, 227, 227);
+  justify-content: center;
+  height: 600px;  /* Ensure this is enough to contain the PipeDiagram */
 }
 
-/* Style regular text */
-p, span, div {
-  font-weight: 300; /* Light */
+
+.valve-control-dashboard h1 {
+  font-size: 32px;
 }
 
-/* Add more specific rules for the components */
-.ValveDiagram, .ATCommands, .DataUpload {
-  font-size: 18px; /* Larger font size for better readability */
+.valve-control-dashboard p {
+  font-size: 16px;
+}
+
+.valve-number {
+  font-size: 10
+  px;
 }
